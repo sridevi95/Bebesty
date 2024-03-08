@@ -1,0 +1,2 @@
+spring:
+  message: "Welcome to prod environment"

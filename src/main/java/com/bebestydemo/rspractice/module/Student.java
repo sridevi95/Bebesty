@@ -1,7 +1,6 @@
 package com.bebestydemo.rspractice.module;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,12 +12,14 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
 public class Student {
   @Id
-  private int studnetId;
+  @GeneratedValue(strategy= GenerationType.AUTO)
+  private int studentId;
   private String name;
   private String location;
+
+@Column(unique = true)
   private String email;
   private String gender;
   private String course;
